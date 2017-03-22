@@ -1,10 +1,11 @@
 <h1>{{title}}</h1>
-    <h2>Agents of the S.H.I.E.L.D</h2>
-<ul class="agents">
-      <li *ngFor="let agent of agents"
-        [class.selected]="agent === selectedAgent"
-        (click)="onSelect(agent)">
-        <span class="badge">{{agent.id}}</span> {{agent.name}}
-      </li>
-</ul>
-<my-agent [agent]="selectedAgent"></my-agent>
+<span>
+<a routerLink="/welcome">Welcome</a>
+<a routerLink="/agent">Agents</a>
+<a routerLink="/base">Base</a>
+<a routerLink="/admin">Admin</a>
+<a routerLink="/gallery">Gallery</a>
+<a routerLink="/aboutUs">AboutUs</a>
+<router-outlet></router-outlet>
+</span>
+<!-- <my-agent [agent]="selectedAgent"></my-agent> -->

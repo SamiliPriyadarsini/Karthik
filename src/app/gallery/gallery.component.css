@@ -1,0 +1,14 @@
+.image{
+    position:absolute;
+    z-index:0;
+}
+.base{
+    position: fixed;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: green;
+}
+td{
+        width: 55px;
+        height: 55px;
+}

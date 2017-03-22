@@ -1,0 +1,11 @@
+.image{
+    position:absolute;
+    margin-left: 20%;
+    margin-right: 50%;
+}
+.base{
+    position: fixed;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rebeccapurple;
+}

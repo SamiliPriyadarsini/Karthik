@@ -11,4 +11,11 @@ export class AgentService {
   return Promise.resolve(AGENTS);
   }
 
+  getAgentsSlowly(): Promise<Agent[]> {
+  return new Promise(resolve => {
+    // Simulate server latency with 2 second delay
+    setTimeout(() => resolve(this.getAgents()), 2000);
+  });
+  }
+
 }

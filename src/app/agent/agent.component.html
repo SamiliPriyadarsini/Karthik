@@ -1,18 +1,27 @@
-<div *ngIf="agent"> 
-      <h2>{{agent.name}} details!</h2>
+    <h2>Agents of the S.H.I.E.L.D</h2>
+<!-- <ul class="agents">
+      <li *ngFor="let agent of agents"
+        [class.selected]="agent === selectedAgent"
+        (click)="onSelect(agent)">
+        <span class="badge">{{agent.id}}</span> {{agent.name}}
+      </li>
+</ul> Just give this block that worls a break--> 
+<!-- not displayed from here -->
+ <!-- <div *ngIf="agent"> --> 
+  <!--    <h2>{{agent.name}} details!</h2>
       <div><label>id: </label>{{agent.id}}</div>
       <div>
         <label>name: </label>
         <input [(ngModel)]="agent.name" placeholder="name"/>
-      </div>
+      </div> -->
 
       <div class='panel panel-primary'>
           <div class='panel-heading'>
               {{pageTitle}}
           </div>
           <div class='panel-body'>
-            <div class='table-responsive' *ngIf="agent">
-                <table class='table'>
+            <div class='table-responsive'>
+                <table class='table' *ngIf="agents && agents.length">
                    <thead>
                         <tr>
                             <th>
@@ -31,11 +40,11 @@
 <!-- The below tbody is not being displayed in the output Fix in progress-->                    
                     <tbody>
                         <tr *ngFor='let agent of agents'>
-                                <td><img *ngIf='showImage' 
+                                <td><span class="vurike"> <img *ngIf='showImage' 
                                          [src]='agent.imageUrl'
                                          [title]='agent.name | uppercase'
                                          [style.width.px]='imageWidth' 
-                                         [style.margin.px]='imageMargin'/>
+                                         [style.margin.px]='imageMargin'/> </span>
                                 </td>
                                 <td>{{agent.id}}</td>
                                 <td>{{agent.name}}</td>
@@ -47,4 +56,4 @@
             </div>
         </div>
     </div>
-</div>
+<!-- </div> -->
