@@ -1,0 +1,50 @@
+<div *ngIf="agent"> 
+      <h2>{{agent.name}} details!</h2>
+      <div><label>id: </label>{{agent.id}}</div>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="agent.name" placeholder="name"/>
+      </div>
+
+      <div class='panel panel-primary'>
+          <div class='panel-heading'>
+              {{pageTitle}}
+          </div>
+          <div class='panel-body'>
+            <div class='table-responsive' *ngIf="agent">
+                <table class='table'>
+                   <thead>
+                        <tr>
+                            <th>
+                                <button class='btn btn-primary'
+                                    (click)='toggleImage()'>
+                                    {{showImage ? 'Hide' : 'Show'}} Image
+                                </button>
+                            </th>
+                            <th>Agent</th>
+                            <th>Agent ID</th>
+                            <th>Name</th>
+                            <th>Possession</th>
+                            <th>Know More </th>
+                        </tr>
+                    </thead>
+<!-- The below tbody is not being displayed in the output Fix in progress-->                    
+                    <tbody>
+                        <tr *ngFor='let agent of agents'>
+                                <td><img *ngIf='showImage' 
+                                         [src]='agent.imageUrl'
+                                         [title]='agent.name | uppercase'
+                                         [style.width.px]='imageWidth' 
+                                         [style.margin.px]='imageMargin'/>
+                                </td>
+                                <td>{{agent.id}}</td>
+                                <td>{{agent.name}}</td>
+                                <td>{{agent.power}}</td>
+                                <td><a [href]="agent.knowMore"> Click to Know me!! </a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
